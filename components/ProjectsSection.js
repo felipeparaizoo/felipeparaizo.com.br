@@ -76,7 +76,7 @@ const ProjectsSection = () => {
       "Calculos de vazões",
       "Seleção de pontas de pulverização",
     ],
-    githubUrl: "https://github.com/Fparaiz0/meu-app-mobile",
+    githubUrl: "https://github.com/Fparaiz0/app_magnojet",
     featured: true,
   };
 
