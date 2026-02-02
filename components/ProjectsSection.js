@@ -641,15 +641,15 @@ const ProjectsSection = () => {
           top: 8px;
           left: 50%;
           transform: translateX(-50%);
-          width: 120px;
-          height: 36px;
+          width: 90px;
+          height: 26px;
           background: #000;
-          border-radius: 20px;
+          border-radius: 15px;
           z-index: 10;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 0 12px;
+          padding: 0 10px;
         }
 
         .island-camera {
@@ -909,8 +909,8 @@ const ProjectsSection = () => {
           }
 
           .dynamic-island {
-            width: 100px;
-            height: 30px;
+            width: 80px;
+            height: 20px;
           }
 
           .app-project-title {
