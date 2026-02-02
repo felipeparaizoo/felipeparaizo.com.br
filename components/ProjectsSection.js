@@ -61,7 +61,7 @@ const ProjectsSection = () => {
   const appProject = {
     title: "App MagnoJet",
     description:
-      "Aplicativo mobile desenvolvido em Flutter com funcionalidades avançadas de geolocalização, notificações push e integração com APIs REST. Interface moderna e responsiva seguindo as melhores práticas de UX/UI para mobile.",
+      "Este aplicativo foi desenvolvido para a empresa <a href='https://www.magnojet.com.br' class='description-link' target='_blank' rel='noopener noreferrer'>MagnoJet</a> e tem como principal objetivo a seleção de pontas agrícolas. Este aplicativo oferece uma interface intuitiva para agricultores selecionarem as pontas ideais para suas necessidades específicas, considerando área de aplicação, tipo de produto, pressão, velocidade, modo de ação e muito mais.",
     image: {
       type: "app",
       video: "/videos/app_magnojet.mp4",
@@ -73,8 +73,7 @@ const ProjectsSection = () => {
       "RESTful APIs",
       "Geolocalização",
       "Push Notifications",
-      "Calculos de vazões",
-      "Seleção de pontas de pulverização",
+      "CI/CD",
     ],
     githubUrl: "https://github.com/Fparaiz0/app_magnojet",
     featured: true,
