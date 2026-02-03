@@ -3,6 +3,10 @@ import Image from "next/image";
 
 const ProjectsSection = () => {
   const getYouTubeEmbedUrl = (url) => {
+    if (!url) return null;
+
+    if (typeof url === "object") return null;
+
     const regExp =
       /^(?:https?:\/\/)?(?:www\.)?(?:m\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=|embed\/|v\/|)([^&?%]{11})(?:[?&][^\s]*)*$/;
     const match = url.match(regExp);
@@ -12,6 +16,7 @@ const ProjectsSection = () => {
   };
 
   const isLocalVideo = (url) => {
+    if (!url || typeof url === "object") return false;
     return (
       url.endsWith(".mp4") || url.endsWith(".webm") || url.endsWith(".ogg")
     );
@@ -53,6 +58,27 @@ const ProjectsSection = () => {
     },
   ];
 
+  const appProject = {
+    title: "App MagnoJet",
+    description:
+      "Este aplicativo foi desenvolvido para a empresa <a href='https://www.magnojet.com.br' class='description-link' target='_blank' rel='noopener noreferrer'>MagnoJet</a> e tem como principal objetivo a seleção de pontas agrícolas. Este aplicativo oferece uma interface intuitiva para agricultores selecionarem as pontas ideais para suas necessidades específicas, considerando área de aplicação, tipo de produto, pressão, velocidade, modo de ação e muito mais.",
+    image: {
+      type: "app",
+      video: "/videos/app_magnojet.mp4",
+    },
+    technologies: [
+      "Flutter",
+      "Dart",
+      "PostgreSQL",
+      "RESTful APIs",
+      "Geolocalização",
+      "Push Notifications",
+      "CI/CD",
+    ],
+    githubUrl: "https://github.com/Fparaiz0/app_magnojet",
+    featured: true,
+  };
+
   return (
     <section id="projects" className="projects">
       <div className="container">
@@ -79,7 +105,6 @@ const ProjectsSection = () => {
                       <iframe
                         src={youtubeEmbedUrl}
                         title={project.title}
-                        frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                         className="project-video"
@@ -179,6 +204,130 @@ const ProjectsSection = () => {
             );
           })}
         </div>
+
+        <div className="app-project-section">
+          <div className="app-project-horizontal">
+            <div className="app-project-container">
+              <div className="app-mockup-side">
+                <div className="iphone-17-pro-max">
+                  <div className="iphone-frame">
+                    <div className="dynamic-island">
+                      <div className="island-camera"></div>
+                      <div className="island-sensors"></div>
+                    </div>
+
+                    <div className="iphone-screen">
+                      <video
+                        src={appProject.image.video}
+                        title={appProject.title}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="app-video"
+                        poster={appProject.image.poster}
+                      >
+                        Seu navegador não suporta o elemento de vídeo.
+                      </video>
+                    </div>
+
+                    <div className="volume-buttons">
+                      <div className="volume-up"></div>
+                      <div className="volume-down"></div>
+                    </div>
+                    <div className="power-button"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="app-content-side">
+                <div className="app-project-content">
+                  <div className="app-project-header">
+                    <div className="app-header-badge">
+                      <span className="app-badge-icon">📱</span>
+                      <span className="app-badge-text">MOBILE APP</span>
+                    </div>
+                    <h3 className="app-project-title">{appProject.title}</h3>
+                    <p
+                      className="app-project-description"
+                      dangerouslySetInnerHTML={{
+                        __html: appProject.description,
+                      }}
+                    ></p>
+                  </div>
+
+                  <div className="app-project-technologies">
+                    {appProject.technologies.map((tech, idx) => (
+                      <span key={idx} className="app-tech-tag">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="app-project-actions">
+                    <a
+                      href={appProject.githubUrl}
+                      className="btn btn-secondary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span>Código Fonte</span>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                      </svg>
+                    </a>
+
+                    {appProject.appStore && (
+                      <a
+                        href={appProject.appStore}
+                        className="btn btn-app-store"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span>App Store</span>
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                        >
+                          <path d="M12 2L9 7H4L6 12H9L12 7H15L18 12H21L19 7H14L12 2Z" />
+                        </svg>
+                      </a>
+                    )}
+
+                    {appProject.playStore && (
+                      <a
+                        href={appProject.playStore}
+                        className="btn btn-play-store"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span>Play Store</span>
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                        >
+                          <path d="M3 20V4L21 12L3 20Z" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <style jsx>{`
@@ -225,11 +374,9 @@ const ProjectsSection = () => {
         .project-media-container {
           position: relative;
           overflow: hidden;
-
           width: 100%;
           padding-bottom: 56.25%;
           height: 0;
-
           display: flex;
           align-items: center;
           justify-content: center;
@@ -417,10 +564,311 @@ const ProjectsSection = () => {
           gap: 0.5rem;
         }
 
+        .app-project-section {
+          max-width: 1200px;
+          margin: 4rem auto 0;
+          padding: 0 1rem;
+        }
+
+        .app-section-title {
+          font-size: 2rem;
+          font-weight: 700;
+          color: var(--accent-lime);
+          text-align: center;
+          margin-bottom: 0.5rem;
+        }
+
+        .app-section-subtitle {
+          color: var(--secondary-mint);
+          text-align: center;
+          margin-bottom: 2.5rem;
+          font-size: 1rem;
+        }
+
+        .app-project-horizontal {
+          background: rgba(10, 31, 24, 0.7);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(206, 241, 123, 0.2);
+          border-radius: 24px;
+          overflow: hidden;
+          box-shadow:
+            0 20px 60px rgba(8, 71, 52, 0.4),
+            0 8px 30px rgba(206, 241, 123, 0.15);
+        }
+
+        .app-project-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          min-height: 600px;
+        }
+
+        .app-mockup-side {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 2rem;
+          background: linear-gradient(135deg, #0a1f18 0%, #083734 100%);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .iphone-17-pro-max {
+          perspective: 1000px;
+        }
+
+        .iphone-frame {
+          width: 320px;
+          height: 650px;
+          background: #1a1a1a;
+          border-radius: 48px;
+          position: relative;
+          box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.6),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+            inset 0 0 30px rgba(0, 0, 0, 0.9);
+          border: 14px solid #000;
+          overflow: hidden;
+          transform: rotateY(-5deg);
+          transition: transform 0.5s ease;
+        }
+
+        .app-project-horizontal:hover .iphone-frame {
+          transform: rotateY(0deg);
+        }
+
+        .dynamic-island {
+          position: absolute;
+          top: 8px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90px;
+          height: 26px;
+          background: #000;
+          border-radius: 15px;
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 10px;
+        }
+
+        .island-camera {
+          width: 12px;
+          height: 12px;
+          background: #333;
+          border-radius: 50%;
+          border: 2px solid #444;
+        }
+
+        .island-sensors {
+          width: 40px;
+          height: 6px;
+          background: #222;
+          border-radius: 3px;
+        }
+
+        .iphone-screen {
+          width: 100%;
+          height: 100%;
+          background: #000;
+          border-radius: 34px;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .app-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .volume-buttons {
+          position: absolute;
+          left: -6px;
+          top: 120px;
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+        }
+
+        .volume-up,
+        .volume-down {
+          width: 6px;
+          height: 45px;
+          background: #333;
+          border-radius: 3px;
+          box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .power-button {
+          position: absolute;
+          right: -6px;
+          top: 160px;
+          width: 6px;
+          height: 65px;
+          background: #333;
+          border-radius: 3px;
+          box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .app-content-side {
+          padding: 3rem 2.5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .app-project-content {
+          max-width: 500px;
+        }
+
+        .app-project-header {
+          margin-bottom: 2rem;
+        }
+
+        .app-header-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 0.4rem 1rem;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+        }
+
+        .app-badge-icon {
+          font-size: 1rem;
+        }
+
+        .app-project-title {
+          font-size: 2rem;
+          font-weight: 700;
+          color: var(--accent-lime);
+          margin-bottom: 1rem;
+          line-height: 1.2;
+          background: linear-gradient(
+            135deg,
+            var(--accent-lime),
+            var(--secondary-mint)
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .app-project-description {
+          color: var(--secondary-mint);
+          font-size: 1rem;
+          line-height: 1.6;
+          margin-bottom: 0;
+        }
+
+        .app-project-description :global(.description-link) {
+          color: var(--accent-lime);
+          text-decoration: none;
+        }
+
+        .app-project-description :global(.description-link:hover) {
+          text-decoration: underline;
+        }
+
+        .app-project-technologies {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .app-tech-tag {
+          background: rgba(206, 241, 123, 0.15);
+          color: var(--accent-lime);
+          padding: 0.5rem 1rem;
+          border-radius: 12px;
+          font-size: 0.85rem;
+          font-weight: 500;
+          border: 1px solid rgba(206, 241, 123, 0.3);
+          transition: all 0.3s ease;
+        }
+
+        .app-tech-tag:hover {
+          background: rgba(206, 241, 123, 0.25);
+          transform: translateY(-2px);
+        }
+
+        .app-project-actions {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+
+        .app-project-actions .btn {
+          padding: 1rem 1.5rem;
+          font-size: 0.9rem;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          border-radius: 12px;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          min-width: 140px;
+        }
+
+        .btn-secondary {
+          background: rgba(206, 241, 123, 0.1);
+          color: var(--accent-lime);
+          border: 1px solid rgba(206, 241, 123, 0.3);
+        }
+
+        .btn-secondary:hover {
+          background: rgba(206, 241, 123, 0.2);
+          transform: translateY(-2px);
+        }
+
+        .btn-app-store {
+          background: linear-gradient(135deg, #000000 0%, #333333 100%);
+          color: white;
+          border: 1px solid #666;
+        }
+
+        .btn-play-store {
+          background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+          color: white;
+          border: 1px solid #4285f4;
+        }
+
+        .btn-app-store:hover,
+        .btn-play-store:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
         @media (max-width: 1024px) {
           .projects-grid {
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
+          }
+
+          .app-project-container {
+            grid-template-columns: 1fr;
+            min-height: auto;
+          }
+
+          .app-mockup-side {
+            padding: 1.5rem;
+            min-height: 500px;
+          }
+
+          .iphone-frame {
+            width: 280px;
+            height: 570px;
+          }
+
+          .app-content-side {
+            padding: 2rem;
           }
         }
 
@@ -447,11 +895,40 @@ const ProjectsSection = () => {
           .project-actions .btn {
             width: 100%;
           }
+
+          .app-project-section {
+            margin-top: 3rem;
+            padding: 0 0.5rem;
+          }
+
+          .iphone-frame {
+            width: 240px;
+            height: 490px;
+            border-radius: 40px;
+            border-width: 10px;
+          }
+
+          .dynamic-island {
+            width: 80px;
+            height: 20px;
+          }
+
+          .app-project-title {
+            font-size: 1.5rem;
+          }
+
+          .app-project-actions {
+            flex-direction: column;
+          }
+
+          .app-project-actions .btn {
+            width: 100%;
+            min-width: auto;
+          }
         }
 
         @media (max-width: 480px) {
           .projects-grid {
-            grid-template-columns: 1fr;
             gap: 1rem;
           }
 
@@ -469,9 +946,29 @@ const ProjectsSection = () => {
             padding: 0.3rem 0.6rem;
             font-size: 0.7rem;
           }
-        }
 
-        @media (max-width: 360px) {
+          .app-project-horizontal {
+            border-radius: 16px;
+          }
+
+          .app-mockup-side {
+            min-height: 450px;
+          }
+
+          .iphone-frame {
+            width: 220px;
+            height: 450px;
+            border-radius: 36px;
+            border-width: 8px;
+          }
+
+          .app-content-side {
+            padding: 1.5rem;
+          }
+
+          .app-project-title {
+            font-size: 1.3rem;
+          }
         }
       `}</style>
     </section>
