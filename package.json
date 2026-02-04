@@ -52,5 +52,10 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "_comment": "Resolução de vulnerabilidades em overrides por enquanto até atualização da dependência commitizen",
+  "overrides": {
+    "lodash": "4.17.23",
+    "tmp": "0.2.4"
   }
 }
