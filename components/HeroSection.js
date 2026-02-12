@@ -15,7 +15,7 @@ const HeroSection = React.forwardRef((props, ref) => {
       "Experiente em APIs REST",
       "Focado em Performance",
       "Transformando ideias em código",
-      "Arquitetura de Software e Padrões MVC",
+      "Arquitetura de Software e Padrões",
       "DevOps e Infraestrutura com Docker",
       "Versionamento com Git & GitHub",
       "Testes e Qualidade de Código",
@@ -85,10 +85,11 @@ const HeroSection = React.forwardRef((props, ref) => {
             </h1>
 
             <p className="hero-description">
-              Transformo ideias em soluções digitais robustas e escaláveis. Com{" "}
-              {experiencia} {experiencia > 1 ? "anos" : "ano"} de experiência,
-              crio experiências excepcionais que impulsionam negócios e resolvem
-              problemas complexos.
+              Com {experiencia} {experiencia > 1 ? "anos" : "ano"} de
+              experiência em arquitetura e desenvolvimento full stack,
+              transformo necessidades complexas em soluções digitais robustas,
+              escaláveis e orientadas a resultados. Da idealização à produção,
+              entrego performance, qualidade e valor de negócio.
             </p>
 
             <div className="hero-actions">
