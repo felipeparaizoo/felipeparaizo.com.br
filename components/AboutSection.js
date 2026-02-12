@@ -46,8 +46,6 @@ const AboutSection = () => {
     },
   ];
 
-  const experiencia = new Date().getFullYear() - 2025;
-
   return (
     <section id="about" className="about">
       <div className="container">
@@ -57,19 +55,40 @@ const AboutSection = () => {
           <div className="about-text">
             <div className="about-intro">
               <p>
-                Sou Felipe Paraizo, um desenvolvedor Full Stack apaixonado por
-                criar soluções digitais que fazem a diferença. Com background em
-                Análise e Desenvolvimento de Sistemas pela PUC-PR e{" "}
-                {experiencia} {experiencia > 1 ? "anos" : "ano"} de experiência
-                no mercado, especializei-me em desenvolver aplicações web
-                modernas, escaláveis e de alto desempenho.
+                Desenvolvedor Full Stack e Mobile com sólida experiência na
+                arquitetura e desenvolvimento de aplicações web e mobile
+                escaláveis, performáticas e orientadas a negócio.
               </p>
               <p>
-                Minha abordagem combina expertise técnica com compreensão de
-                negócios, garantindo que cada projeto não apenas atenda aos
-                requisitos técnicos, mas também impulsione o crescimento e o
-                sucesso dos clientes, priorizando a experiência do usuário e a
-                arquitetura limpa.
+                Atuo de ponta a ponta no ciclo de desenvolvimento — da definição
+                técnica da solução à implementação e evolução contínua —
+                utilizando PHP (Laravel), Node.js, React, Next.js, Flutter e
+                Dart.
+              </p>
+              <p>
+                Possuo forte atuação na construção e integração de APIs REST,
+                modelagem de sistemas, integrações entre plataformas e
+                otimização de performance, sempre aplicando boas práticas,
+                princípios de arquitetura limpa e organização estrutural do
+                código.
+              </p>
+              <p>
+                Atualmente, também atuo com suporte técnico e customizações no
+                ERP TOTVS Protheus, realizando integrações, ajustes e melhorias
+                operacionais que impactam diretamente a eficiência dos processos
+                internos.
+              </p>
+              <p>
+                Utilizo Linux como sistema operacional principal, com domínio do
+                ambiente de desenvolvimento e servidores, garantindo maior
+                controle sobre infraestrutura, deploy e estabilidade das
+                aplicações.
+              </p>
+              <p>
+                Estou em constante evolução técnica, ampliando minha atuação no
+                ecossistema .NET e C#, além de desenvolver continuamente minha
+                comunicação em inglês para atuar em projetos com contexto
+                internacional.
               </p>
             </div>
 
