@@ -4,28 +4,45 @@ const AboutSection = () => {
   const skillsData = [
     {
       title: "Frontend",
-      tags: ["React", "Next.js", "JavaScript", "Tailwind CSS", "BootStrap"],
+      tags: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "Tailwind CSS",
+        "BootStrap",
+      ],
     },
     {
       title: "Backend & Dados",
       tags: [
-        "Php",
+        "PHP",
         "Laravel 12",
         "Node.js",
         "Python",
         "Java",
+        "C#",
+        ".NET Core",
         "MySQL",
-        "SQLite",
         "PostgreSQL",
+        "SQLite",
+        "MariaDB",
+        "API REST",
+        "JWT",
+        "MVC",
       ],
     },
     {
       title: "DevOps & Infraestrutura",
-      tags: ["Docker", "Git", "CI/CD", "MVC", "Micro-Serviços"],
+      tags: ["Docker", "Git", "GitHub", "AWS", "Linux", "CI/CD"],
     },
     {
-      title: "Mobile & Ferramentas",
-      tags: ["Flutter", "Dart", "Postman", "Composer", "Jest"],
+      title: "Mobile",
+      tags: ["Flutter", "Dart", "Firebase", "Xcode", "Android Studio"],
+    },
+    {
+      title: "Ferramentas & Testes",
+      tags: ["Postman", "Insomnia", "Composer", "Jest", "PHPUnit"],
     },
   ];
 
