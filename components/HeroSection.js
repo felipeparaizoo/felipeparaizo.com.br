@@ -9,12 +9,22 @@ const HeroSection = React.forwardRef((props, ref) => {
   useEffect(() => {
     const texts = [
       "Desenvolvedor Full Stack",
-      "Especialista em Php/Laravel",
-      "Entusiasmado por Next.js",
+      "Especialista em PHP/Laravel",
+      "Entusiasta em Next.js",
       "Fascinado por Banco de Dados",
-      "Experiente em API'S",
+      "Experiente em APIs REST",
       "Focado em Performance",
-      "Transformando Ideias em Código",
+      "Transformando ideias em código",
+      "Arquitetura de Software e Padrões MVC",
+      "DevOps e Infraestrutura com Docker",
+      "Versionamento com Git & GitHub",
+      "Testes e Qualidade de Código",
+      "Mobile com Flutter & Firebase",
+      "Ambiente 100% Linux 🐧",
+      "Aprendizado Contínuo",
+      "Resolução Criativa de Problemas",
+      "Código Limpo e Boas Práticas",
+      "Colaboração e Metodologias Ágeis",
     ];
 
     const currentString = texts[currentIndex];
