@@ -7,12 +7,10 @@ import ProjectsSection from "../components/ProjectsSection";
 import ExperienceSection from "../components/ExperienceSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
-import LoadingScreen from "../components/LoadingScreen";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
   const mousePosition = useRef({ x: 50, y: 50 });
@@ -78,11 +76,6 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
@@ -141,10 +134,6 @@ export default function Home() {
     handleMouseMove,
     isMobile,
   ]);
-
-  if (isLoading) {
-    return <LoadingScreen />;
-  }
 
   return (
     <div className="portfolio">
