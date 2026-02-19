@@ -169,11 +169,6 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
       </Head>
 
       <Navigation
@@ -275,6 +270,7 @@ export default function Home() {
           position: relative;
           z-index: 10;
           width: 100%;
+          padding-top: 80px;
         }
 
         .portfolio::before {
@@ -1043,9 +1039,20 @@ export default function Home() {
             padding: 0 1.5rem;
           }
 
+          .main-content {
+            padding-top: 60px;
+          }
+
           .hero-section {
-            padding: 6rem 0 4rem 0;
+            padding: 0 0 4rem 0;
             min-height: auto;
+          }
+
+          .about-section,
+          .projects-section,
+          .experience-section,
+          .contact-section {
+            scroll-margin-top: 80px;
           }
 
           .main-section {
@@ -1120,8 +1127,12 @@ export default function Home() {
             padding: 0 1rem;
           }
 
+          .main-content {
+            padding-top: 60px;
+          }
+
           .hero-section {
-            padding: 5rem 0 3rem 0;
+            padding: 0 0 2rem 0;
           }
 
           .main-section {
