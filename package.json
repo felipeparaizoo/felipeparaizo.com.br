@@ -18,7 +18,9 @@
     "lint:prettier:fix": "prettier --write .",
     "lint:eslint:check": "npx eslint .",
     "prepare": "husky",
-    "commit": "cz"
+    "commit": "cz",
+    "update-dependencies": "npx npm-check-updates -i",
+    "install-dependencies": "rm -rf node_modules package-lock.json && npm i"
   },
   "author": "",
   "license": "MIT",
