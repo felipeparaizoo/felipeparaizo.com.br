@@ -77,8 +77,8 @@ const ContactSection = () => {
         </svg>
       ),
       label: "WhatsApp",
-      value: "+55 (43) 98806-3850",
-      link: "https://wa.me/5543988063850",
+      value: "+55 (43) 99681-9813",
+      link: "https://wa.me/5543996819813",
     },
     {
       icon: (
