@@ -7,7 +7,9 @@ const ExperienceSection = () => {
       company: "MagnoJet",
       duration: "Jul 2025 - Atualmente",
       description:
-        "Atuo na MagnoJet desenvolvendo soluções robustas e inovadoras para o ERP TOTVS Protheus, com responsabilidades que incluem análise de desempenho, suporte aos usuários, evolução de funcionalidades e desenho/estruturação de APIs. Como iniciativa complementar, desenvolvi uma plataforma em PHP (Laravel 12) para pré-postagens dos Correios, integrando-se via APIs oficiais para orquestrar a comunicação entre a aplicação e os serviços dos Correios. Minha atuação é orientada à otimização de processos, eficiência das integrações e excelência em suporte e entregas tecnológicas.",
+        "Atuo na MagnoJet desenvolvendo soluções robustas e inovadoras para o ERP da TOTVS (Protheus), com responsabilidades que incluem análise de desempenho, suporte aos usuários, evolução de funcionalidades e desenho/estruturação de APIs. " +
+        "Como iniciativa complementar, desenvolvi uma plataforma em PHP (Laravel 12) para pré-postagens dos Correios, integrando-se via APIs oficiais para orquestrar a comunicação entre a aplicação e os serviços postais. " +
+        "Além disso, estou desenvolvendo um aplicativo mobile em Flutter, focado em performance, usabilidade e arquitetura escalável, ampliando minha atuação no desenvolvimento multiplataforma. Minha atuação é orientada à otimização de processos, eficiência das integrações e excelência em suporte e entregas tecnológicas.",
       technologies: [
         "TOTVS Protheus",
         "Laravel 12",
