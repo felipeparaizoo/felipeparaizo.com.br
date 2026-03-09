@@ -8,6 +8,7 @@ const HeroSection = React.forwardRef((props, ref) => {
 
   useEffect(() => {
     const texts = [
+      "CTO do Grupo Veronez",
       "Desenvolvedor Full Stack",
       "Especialista em PHP/Laravel",
       "Entusiasta em Next.js",
@@ -85,7 +86,16 @@ const HeroSection = React.forwardRef((props, ref) => {
             </h1>
 
             <p className="hero-description">
-              Com {experiencia} {experiencia > 1 ? "anos" : "ano"} de
+              Como CTO do{" "}
+              <a
+                href="https://www.grupoveronez.com.br"
+                className="description-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Grupo Veronez
+              </a>{" "}
+              e com {experiencia} {experiencia > 1 ? "anos" : "ano"} de
               experiência em arquitetura e desenvolvimento full stack,
               transformo necessidades complexas em soluções digitais robustas,
               escaláveis e orientadas a resultados. Da idealização à produção,
@@ -432,6 +442,20 @@ const HeroSection = React.forwardRef((props, ref) => {
           margin-bottom: 2.5rem;
           line-height: 1.7;
           max-width: 95%;
+        }
+
+        .hero-description :global(.description-link),
+        .hero-description :global(.description-link:link),
+        .hero-description :global(.description-link:visited),
+        .hero-description :global(.description-link:active),
+        .hero-description :global(.description-link:focus) {
+          color: var(--accent-lime);
+          text-decoration: none;
+        }
+
+        .hero-description :global(.description-link:hover) {
+          color: var(--accent-lime);
+          text-decoration: underline;
         }
 
         .hero-actions {
