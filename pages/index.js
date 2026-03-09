@@ -162,10 +162,10 @@ export default function Home() {
       )}
 
       <Head>
-        <title>Felipe Paraizo | Desenvolvedor Full Stack</title>
+        <title>Felipe Paraizo | CTO & Desenvolvedor Full Stack</title>
         <meta
           name="description"
-          content="Desenvolvedor Full Stack especializado em React, Next.js e Node.js. Criando soluções digitais inovadoras e de alto desempenho."
+          content="CTO do Grupo Veronez e Desenvolvedor Full Stack especializado em React, Next.js e Node.js. Criando soluções digitais inovadoras e de alto desempenho."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
