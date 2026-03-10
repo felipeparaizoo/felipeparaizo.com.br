@@ -32,5 +32,5 @@
 ---
 
 <p align="center">
-  Made by <a href="https://github.com/Fparaiz0/" target="_blank">Felipe Paraizo</a>
+  Made by <a href="https://github.com/felipeparaizoo/" target="_blank">Felipe Paraizo</a>
 </p>
