@@ -43,7 +43,7 @@
     "concurrently": "9.2.1",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "9.39.2",
-    "eslint-config-next": "16.1.6",
+    "eslint-config-next": "16.1.7",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-jest": "29.15.0",
     "husky": "9.1.7",
