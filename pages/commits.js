@@ -726,7 +726,7 @@ export default function Commits() {
           margin: 0 auto;
           text-align: center;
           word-break: break-word;
-          font-size: 1.3rem;
+          font-size: 1.1rem;
         }
 
         .repo-link:hover {
