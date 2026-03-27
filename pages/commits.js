@@ -75,7 +75,7 @@ export default function Commits() {
 
     try {
       const response = await fetch(
-        `https://api.github.com/repos/Fparaiz0/felipeparaizo.com.br/commits?per_page=${limit}`,
+        `https://api.github.com/repos/felipeparaizoo/felipeparaizo.com.br/commits?per_page=${limit}`,
         {
           headers: {
             Accept: "application/vnd.github.v3+json",
@@ -224,12 +224,12 @@ export default function Commits() {
                     Repositório
                   </span>
                   <a
-                    href="https://github.com/Fparaiz0/felipeparaizo.com.br"
+                    href="https://github.com/felipeparaizoo/felipeparaizo.com.br"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="repo-link"
                   >
-                    Fparaiz0/felipeparaizo.com.br
+                    felipeparaizoo/felipeparaizo.com.br
                     <svg
                       className="external-icon"
                       width="16"
@@ -726,7 +726,7 @@ export default function Commits() {
           margin: 0 auto;
           text-align: center;
           word-break: break-word;
-          font-size: 1.3rem;
+          font-size: 1.1rem;
         }
 
         .repo-link:hover {
