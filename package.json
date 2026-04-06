@@ -2,6 +2,7 @@
   "name": "clone-tabnews",
   "version": "1.0.0",
   "description": "Implementação do https://www.tabnews.com.br para o https://curso.dev",
+  "author": "Felipe Paraizo",
   "main": "index.js",
   "scripts": {
     "dev": "npm run services:up && npm run services:wait:database && npm run migrations:up && next dev",
