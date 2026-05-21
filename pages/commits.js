@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Image from "next/image";
@@ -14,9 +14,9 @@ export default function Commits() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection] = useState("commits");
 
-  const mousePosition = useMemo(() => ({ current: { x: 50, y: 50 } }), []);
-  const rafId = useMemo(() => ({ current: null }), []);
-  const lastUpdateTime = useMemo(() => ({ current: 0 }), []);
+  const mousePosition = useRef({ x: 50, y: 50 });
+  const rafId = useRef(null);
+  const lastUpdateTime = useRef(0);
 
   const handleMouseMove = useCallback(
     (e) => {
@@ -42,7 +42,7 @@ export default function Commits() {
         root.style.setProperty("--mouse-y", `${mousePosition.current.y}%`);
       });
     },
-    [isMobile, lastUpdateTime, rafId, mousePosition],
+    [isMobile],
   );
 
   useEffect(() => {
@@ -67,9 +67,50 @@ export default function Commits() {
         cancelAnimationFrame(rafId.current);
       }
     };
-  }, [handleMouseMove, isMobile, rafId]);
+  }, [handleMouseMove, isMobile]);
 
-  const fetchCommits = async (limit = 10) => {
+  useEffect(() => {
+    const fetchCommits = async (limit = 10) => {
+      setLoadingCommits(true);
+      setError(null);
+
+      try {
+        const response = await fetch(
+          `https://api.github.com/repos/felipeparaizoo/felipeparaizo.com.br/commits?per_page=${limit}`,
+          {
+            headers: {
+              Accept: "application/vnd.github.v3+json",
+              "User-Agent": "Fparaiz0-Portfolio",
+            },
+          },
+        );
+
+        if (!response.ok) {
+          if (response.status === 404) {
+            throw new Error("Repositório não encontrado");
+          } else if (response.status === 403) {
+            throw new Error(
+              "Limite de requisições excedido. Tente novamente mais tarde.",
+            );
+          } else {
+            throw new Error(`Erro na API: ${response.status}`);
+          }
+        }
+
+        const data = await response.json();
+        setCommits(data);
+        setLastUpdate(new Date());
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoadingCommits(false);
+      }
+    };
+
+    fetchCommits(commitLimit);
+  }, [commitLimit]);
+
+  const fetchCommits = useCallback(async (limit = 10) => {
     setLoadingCommits(true);
     setError(null);
 
@@ -104,11 +145,7 @@ export default function Commits() {
     } finally {
       setLoadingCommits(false);
     }
-  };
-
-  useEffect(() => {
-    fetchCommits(commitLimit);
-  }, [commitLimit]);
+  }, []);
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
