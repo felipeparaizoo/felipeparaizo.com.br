@@ -31,7 +31,7 @@
     "dotenv-expand": "1000.0.0",
     "next": "16.3.5",
     "node-pg-migrate": "8.0.4",
-    "nodemailer": "9.0.1",
+    "nodemailer": "10.0.10",
     "pg": "8.23.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
